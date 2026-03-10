@@ -1,26 +1,163 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<title>NYC Taxi Analysis</title>
-<meta name="description" content="Analysis of NYC taxi trip data using Python and pandas.">
-<meta property="og:title" content="NYC Taxi Analysis">
-<meta property="og:description" content="Analysis of NYC taxi trip data using Python and pandas.">
-<meta property="og:type" content="website">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NYC Taxi Analysis</title>
+  <meta name="description" content="A data analysis project exploring NYC taxi trip patterns using Python, pandas, and visualization.">
+  <meta property="og:title" content="NYC Taxi Analysis">
+  <meta property="og:description" content="A data analysis project exploring NYC taxi trip patterns using Python, pandas, and visualization.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cmiyares.github.io/nyc-taxi-analysis/">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f7fb;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #0f172a, #1d4ed8);
+      color: white;
+      padding: 64px 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      margin: 0 0 12px;
+      font-size: 2.5rem;
+    }
+
+    .hero p {
+      margin: 0;
+      max-width: 700px;
+      font-size: 1.1rem;
+      color: #dbeafe;
+    }
+
+    .content {
+      padding: 40px 20px 60px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 28px;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    }
+
+    h2 {
+      margin-top: 0;
+      color: #111827;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-bottom: 0;
+    }
+
+    .button-row {
+      margin-top: 24px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.2s ease;
+    }
+
+    .button-primary {
+      background: #2563eb;
+      color: white;
+    }
+
+    .button-primary:hover {
+      background: #1d4ed8;
+    }
+
+    .button-secondary {
+      background: #e5e7eb;
+      color: #111827;
+    }
+
+    .button-secondary:hover {
+      background: #d1d5db;
+    }
+
+    .footer {
+      text-align: center;
+      color: #6b7280;
+      font-size: 0.95rem;
+      padding: 0 20px 40px;
+    }
+  </style>
 </head>
+<body>
+  <section class="hero">
+    <div class="container">
+      <h1>NYC Taxi Analysis</h1>
+      <p>
+        A data analysis project exploring NYC taxi trip patterns, fares, and demand trends
+        using Python, pandas, and data visualization.
+      </p>
 
-<body style="font-family: Arial; max-width: 800px; margin: 40px auto;">
-<h1>NYC Taxi Analysis</h1>
+      <div class="button-row">
+        <a class="button button-primary" href="https://github.com/cmiyares/nyc-taxi-analysis">View GitHub Repo</a>
+        <a class="button button-secondary" href="https://cmiyares.github.io/nyc-taxi-analysis/">Refresh Site</a>
+      </div>
+    </div>
+  </section>
 
-<p>
-Data analysis of NYC taxi trip data using Python, pandas, and visualization.
-</p>
+  <main class="content">
+    <div class="container">
+      <div class="card">
+        <h2>About the Project</h2>
+        <p>
+          This project analyzes NYC taxi trip data to better understand ride patterns,
+          trip volume, fare behavior, and overall transportation trends across the city.
+        </p>
+      </div>
 
-<p>
-<a href="https://github.com/cmiyares/nyc-taxi-analysis">
-View the GitHub repository
-</a>
-</p>
+      <div class="card">
+        <h2>Tools Used</h2>
+        <ul>
+          <li>Python</li>
+          <li>pandas</li>
+          <li>Matplotlib</li>
+          <li>Jupyter Notebook</li>
+        </ul>
+      </div>
 
+      <div class="card">
+        <h2>What I Explored</h2>
+        <ul>
+          <li>Trip distribution and demand patterns</li>
+          <li>Relationships between fare amount and trip distance</li>
+          <li>Trends that help explain taxi usage across NYC</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <div class="footer">
+    Built by Christian Miyares
+  </div>
 </body>
 </html>
