@@ -13,6 +13,16 @@ A sample dataset of **200,000 taxi trips** was processed and loaded into a Postg
 
 The results were exported and visualized using Python to communicate key insights from the data.
 
+## Key Metrics
+
+| Metric | Value |
+|------|------|
+| Trips analyzed | **200,000** |
+| Peak demand hour | **18:00** |
+| Most active borough | **Manhattan** |
+| Top pickup location | **Upper East Side South** |
+| SQL queries written | **5 analytical queries** |
+
 ## Skills Demonstrated
 
 - SQL data analysis
@@ -41,17 +51,21 @@ The results were exported and visualized using Python to communicate key insight
 
 ### Taxi Demand by Hour
 
-![Hourly Demand](images/hourly_demand.png)
+<p align="center">
+  <img src="images/hourly_demand.png" width="700">
+</p>
 
-Taxi demand increases steadily throughout the day and peaks during evening commute hours around 6 PM.
+Taxi demand increases throughout the day and peaks during the evening commute around **6 PM**.
 
 ### Top Pickup Zones
 
-![Top Pickup Zones](images/top_zones.png)
+<p align="center">
+  <img src="images/top_zones.png" width="700">
+</p>
 
 Most taxi pickups occur in Manhattan, particularly in busy areas such as Midtown and the Upper East Side.
 
-## Example SQL Querys
+## Example SQL Queries
 
 The project uses analytical SQL queries to explore taxi trip patterns.
 
@@ -129,25 +143,25 @@ The following preparation steps were performed:
 nyc-taxi-analysis
 │
 ├── notebooks
-│ [convert_sample.py](notebooks/convert_sample.py)
-│ [create_visualizations.py](notebooks/create_visualizations.py)
+│   convert_sample.py
+│   create_visualizations.py
 │
 ├── sql
-│ [00_create_tables.sql](sql/00_create_tables.sql)
-│ [01_trip_analysis.sql](sql/01_trip_analysis.sql)
-│ [02_fare_analysis.sql](sql/02_fare_analysis.sql)
-│ [03_hourly_demand.sql](sql/03_hourly_demand.sql)
-│ [04_top_zones_by_borough.sql](sql/04_top_zones_by_borough.sql)
-│ [05_distance_fare_by_hour.sql](sql/05_distance_fare_by_hour.sql)
+│   00_create_tables.sql
+│   01_trip_analysis.sql
+│   02_fare_analysis.sql
+│   03_hourly_demand.sql
+│   04_top_zones_by_borough.sql
+│   05_distance_fare_by_hour.sql
 │
 ├── data
-│ outputs
-│ [hourly_demand.csv](data/outputs/hourly_demand.csv)
-│ [top_zones.csv](data/outputs/top_zones.csv)
+│   outputs
+│       hourly_demand.csv
+│       top_zones.csv
 │
 └── images
-[hourly_demand.png](images/hourly_demand.png)
-[top_zones.png](images/top_zones.png)
+    hourly_demand.png
+    top_zones.png
 ```
 
 
