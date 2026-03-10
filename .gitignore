@@ -1,6 +1,6 @@
 data/raw/
 data/processed/
 *.parquet
-*.csv
+
 __pycache__/
 .ipynb_checkpoints/
