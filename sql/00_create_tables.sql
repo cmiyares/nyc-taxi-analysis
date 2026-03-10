@@ -2,16 +2,16 @@ DROP TABLE IF EXISTS taxi_trips;
 DROP TABLE IF EXISTS taxi_zones;
 
 CREATE TABLE taxi_trips (
-    vendorid INTEGER,
+    vendorid NUMERIC,
     tpep_pickup_datetime TIMESTAMP,
     tpep_dropoff_datetime TIMESTAMP,
     passenger_count NUMERIC,
     trip_distance NUMERIC,
-    ratecodeid INTEGER,
+    ratecodeid NUMERIC,
     store_and_fwd_flag TEXT,
-    pulocationid INTEGER,
-    dolocationid INTEGER,
-    payment_type INTEGER,
+    pulocationid NUMERIC,
+    dolocationid NUMERIC,
+    payment_type NUMERIC,
     fare_amount NUMERIC,
     extra NUMERIC,
     mta_tax NUMERIC,
