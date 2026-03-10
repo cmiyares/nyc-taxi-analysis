@@ -16,19 +16,11 @@ Tip percentages vary significantly across boroughs. Manhattan trips show much hi
 
 Some records appear under categories such as "N/A" or "Unknown", indicating missing or special zone codes in the raw dataset.
 
-
-
-\### Hourly Taxi Demand
-
-
+### Hourly Taxi Demand
 
 Taxi demand increases throughout the day and peaks in the early evening.
 
+The busiest pickup hour in the sample dataset occurs around **6 PM**, which likely reflects evening commute activity and travel to entertainment areas.
 
-
-The busiest pickup hour in the sample dataset occurs around \*\*6 PM\*\*, which likely reflects evening commute activity and travel to entertainment areas.
-
-
-
-Demand is lowest between \*\*3 AM and 5 AM\*\*, when overall travel activity is minimal.
+Demand is lowest between **3 AM and 5 AM**, when overall travel activity is minimal.
 
