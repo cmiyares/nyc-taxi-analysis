@@ -80,9 +80,8 @@ JOIN taxi_zones z
 GROUP BY z.zone, z.borough
 ORDER BY trip_count DESC
 LIMIT 10;
-
-
 ```
+
 **Hourly Taxi Demand**
 
 ```sql
@@ -92,7 +91,6 @@ SELECT
 FROM taxi_trips
 GROUP BY pickup_hour
 ORDER BY pickup_hour;
-
 ```
 ## Key Insights
 
