@@ -1,50 +1,66 @@
+# NYC Taxi Data Analysis
+
+This project analyzes NYC taxi trip data using PostgreSQL and SQL to explore trip demand patterns, fare behavior, and geographic pickup trends.
+
+The dataset comes from the NYC Taxi & Limousine Commission and contains detailed records of taxi trips including pickup times, locations, fares, and trip distances.
+
+## Tools Used
+
+- PostgreSQL
+- SQL
+- Python (pandas, matplotlib)
+- Git / GitHub
+
+## Project Workflow
+
+1. Raw taxi trip data downloaded from the NYC TLC dataset.
+2. Data converted from Parquet to CSV using Python.
+3. A sample of 200,000 trips loaded into PostgreSQL.
+4. SQL queries used to analyze trip demand and fare patterns.
+5. Python used to generate visualizations of key results.
+
+## Visualizations
+
+### Taxi Demand by Hour
+
+![Hourly Demand](images/hourly_demand.png)
+
+Taxi demand increases steadily throughout the day and peaks during evening commute hours around 6 PM.
+
+### Top Pickup Zones
+
+![Top Pickup Zones](images/top_zones.png)
+
+Most taxi pickups occur in Manhattan, particularly in busy areas such as Midtown and the Upper East Side.
+
 ## Key Insights
 
-### Trip Distribution
+- Manhattan accounts for the majority of taxi trips in the dataset.
+- Airport-related zones in Queens show higher average fares.
+- Taxi demand peaks during evening commute hours.
+- Late-night trips tend to have longer travel distances.
 
-Manhattan dominates taxi activity in the dataset, accounting for the majority of trips in the sample.
+## Repository Structure
 
-### Fare Differences
-
-Trips originating in Queens have significantly higher average fares ($44.63) compared to Manhattan ($14.09), likely due to airport travel distances.
-
-### Tipping Behavior
-
-Tip percentages vary significantly across boroughs. Manhattan trips show much higher tipping behavior (~17%) compared to Brooklyn (~2%) and the Bronx (~0.3%).
-
-### Data Quality
-
-Some records appear under categories such as "N/A" or "Unknown", indicating missing or special zone codes in the raw dataset.
-
-### Hourly Taxi Demand
-
-Taxi demand increases throughout the day and peaks in the early evening.
-
-The busiest pickup hour in the sample dataset occurs around **6 PM**, which likely reflects evening commute activity and travel to entertainment areas.
-
-Demand is lowest between **3 AM and 5 AM**, when overall travel activity is minimal.
-
-### Top Pickup Zones by Borough
-
-Using a SQL window function (`ROW_NUMBER()`), the busiest pickup zones within each borough were identified.
-
-In Manhattan, the most active pickup locations are:
-
-- Upper East Side South
-- Midtown Center
-- Upper East Side North
-
-In Queens, airport-related zones dominate taxi demand:
-
-- JFK Airport
-- LaGuardia Airport
-
-This highlights the importance of airport transportation in overall taxi activity.
-
-### Trip Distance and Fare by Hour
-
-Trip distance and average fares vary throughout the day.
-
-Longer trips appear more frequently during late-night and early morning hours. For example, the average trip distance around **1 AM reaches over 33 miles**, which may reflect airport or long-distance trips.
-
-During daytime hours, average trip distances remain shorter but trip volume increases significantly, indicating typical commuter and city travel patterns.
+nyc-taxi-analysis
+│
+├── notebooks
+│ convert_sample.py
+│ create_visualizations.py
+│
+├── sql
+│ 00_create_tables.sql
+│ 01_trip_analysis.sql
+│ 02_fare_analysis.sql
+│ 03_hourly_demand.sql
+│ 04_top_zones_by_borough.sql
+│ 05_distance_fare_by_hour.sql
+│
+├── data
+│ outputs
+│ hourly_demand.csv
+│ top_zones.csv
+│
+└── images
+hourly_demand.png
+top_zones.png
