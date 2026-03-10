@@ -5,10 +5,6 @@
 ![SQL](https://img.shields.io/badge/SQL-Analytics-orange)
 ![Matplotlib](https://img.shields.io/badge/Matplotlib-Visualization-green)
 
-![NYC Taxi Demand](images/hourly_demand.png)
-
-SQL + PostgreSQL project analyzing NYC taxi trip data to uncover demand patterns, fare behavior, and geographic pickup trends.
-
 This project analyzes NYC taxi trip data using PostgreSQL and SQL to explore trip demand patterns, fare behavior, and geographic pickup trends.
 
 The dataset comes from the NYC Taxi & Limousine Commission and contains detailed records of taxi trips including pickup times, locations, fares, and trip distances.
