@@ -5,9 +5,22 @@
 ![SQL](https://img.shields.io/badge/SQL-Analytics-orange)
 ![Matplotlib](https://img.shields.io/badge/Matplotlib-Visualization-green)
 
-This project analyzes NYC taxi trip data using PostgreSQL and SQL to explore trip demand patterns, fare behavior, and geographic pickup trends.
+## Project Summary
 
-The dataset comes from the NYC Taxi & Limousine Commission and contains detailed records of taxi trips including pickup times, locations, fares, and trip distances.
+This project analyzes NYC taxi trip data using PostgreSQL and SQL to identify patterns in taxi demand, fare behavior, and geographic pickup activity.
+
+A sample dataset of **200,000 taxi trips** was processed and loaded into a PostgreSQL database. Analytical SQL queries were used to explore trends such as peak demand hours, busiest pickup locations, and differences in trip distance and fare patterns across boroughs.
+
+The results were exported and visualized using Python to communicate key insights from the data.
+
+## Skills Demonstrated
+
+- SQL data analysis
+- PostgreSQL database design
+- Data cleaning and preparation with Python
+- Analytical queries using joins, aggregations, and window functions
+- Data visualization with Python (matplotlib)
+- Working with large public datasets
 
 ## Tools Used
 
