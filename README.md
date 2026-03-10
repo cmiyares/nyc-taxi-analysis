@@ -38,6 +38,24 @@ Taxi demand increases steadily throughout the day and peaks during evening commu
 
 Most taxi pickups occur in Manhattan, particularly in busy areas such as Midtown and the Upper East Side.
 
+## Example SQL Query
+
+The project uses analytical SQL queries to explore taxi trip patterns.
+
+Example: **Busiest Pickup Zones**
+
+```sql
+SELECT
+    z.zone,
+    z.borough,
+    COUNT(*) AS trip_count
+FROM taxi_trips t
+JOIN taxi_zones z
+    ON t.pulocationid = z.locationid
+GROUP BY z.zone, z.borough
+ORDER BY trip_count DESC
+LIMIT 10;
+
 ## Key Insights
 
 - Manhattan accounts for the majority of taxi trips in the dataset.
