@@ -17,7 +17,7 @@ The results were exported and visualized using Python to communicate key insight
 
 - SQL data analysis
 - PostgreSQL database design
-- Data cleaning and preparation with Python
+- Data cleaning and transformation with Python
 - Analytical queries using joins, aggregations, and window functions
 - Data visualization with Python (matplotlib)
 - Working with large public datasets
@@ -51,11 +51,11 @@ Taxi demand increases steadily throughout the day and peaks during evening commu
 
 Most taxi pickups occur in Manhattan, particularly in busy areas such as Midtown and the Upper East Side.
 
-## Example SQL Query
+## Example SQL Querys
 
 The project uses analytical SQL queries to explore taxi trip patterns.
 
-Example: **Busiest Pickup Zones**
+**Busiest Pickup Zones**
 
 ```sql
 SELECT
@@ -68,6 +68,18 @@ JOIN taxi_zones z
 GROUP BY z.zone, z.borough
 ORDER BY trip_count DESC
 LIMIT 10;
+
+
+```
+**Hourly Taxi Demand**
+
+```sql
+SELECT
+    EXTRACT(HOUR FROM tpep_pickup_datetime) AS pickup_hour,
+    COUNT(*) AS trip_count
+FROM taxi_trips
+GROUP BY pickup_hour
+ORDER BY pickup_hour;
 
 ```
 ## Key Insights
@@ -96,8 +108,7 @@ LIMIT 10;
 
 The dataset used in this project comes from the NYC Taxi & Limousine Commission.
 
-Source:
-https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page
+Source: [NYC Taxi Trip Record Data](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page)
 
 The raw dataset is distributed in Parquet format and contains detailed taxi trip records including pickup times, locations, trip distance, and fare information.
 
@@ -114,7 +125,7 @@ The following preparation steps were performed:
 5. A relational schema was defined to store taxi trips and taxi zone metadata.
 
 ## Repository Structure
-
+```markdown
 nyc-taxi-analysis
 │
 ├── notebooks
@@ -137,5 +148,7 @@ nyc-taxi-analysis
 └── images
 hourly_demand.png
 top_zones.png
+```
+
 
 
