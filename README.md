@@ -77,6 +77,42 @@ LIMIT 10;
 - Taxi demand peaks during evening commute hours.
 - Late-night trips tend to have longer travel distances.
 
+## Data Dictionary
+
+| Column | Description |
+|------|-------------|
+| tpep_pickup_datetime | Timestamp when the trip started |
+| tpep_dropoff_datetime | Timestamp when the trip ended |
+| passenger_count | Number of passengers in the taxi |
+| trip_distance | Trip distance in miles |
+| fare_amount | Base fare charged for the trip |
+| tip_amount | Tip paid by the passenger |
+| total_amount | Total amount paid for the trip |
+| PULocationID | Pickup taxi zone ID |
+| DOLocationID | Dropoff taxi zone ID |
+| payment_type | Payment method used |
+
+## Dataset
+
+The dataset used in this project comes from the NYC Taxi & Limousine Commission.
+
+Source:
+https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page
+
+The raw dataset is distributed in Parquet format and contains detailed taxi trip records including pickup times, locations, trip distance, and fare information.
+
+## Data Preparation
+
+The raw NYC taxi dataset is distributed in **Parquet format**, which is efficient for large-scale data storage but not directly convenient for database ingestion.
+
+The following preparation steps were performed:
+
+1. The Parquet dataset was loaded using **Python (pandas + pyarrow)**.
+2. A **200,000 row sample** was extracted to create a manageable analysis dataset.
+3. The sample dataset was exported to **CSV format**.
+4. The CSV file was imported into a **PostgreSQL database** using the `\copy` command.
+5. A relational schema was defined to store taxi trips and taxi zone metadata.
+
 ## Repository Structure
 
 nyc-taxi-analysis
