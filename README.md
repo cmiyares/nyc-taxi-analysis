@@ -51,17 +51,15 @@ The results were exported and visualized using Python to communicate key insight
 
 ### Taxi Demand by Hour
 
-<p align="center">
-  <img src="images/hourly_demand.png" width="700">
-</p>
+![Taxi Demand by Hour](images/hourly_demand.png)
 
 Taxi demand increases throughout the day and peaks during the evening commute around **6 PM**.
 
+---
+
 ### Top Pickup Zones
 
-<p align="center">
-  <img src="images/top_zones.png" width="700">
-</p>
+![Top Pickup Zones](images/top_zones.png)
 
 Most taxi pickups occur in Manhattan, particularly in busy areas such as Midtown and the Upper East Side.
 
@@ -137,6 +135,16 @@ The following preparation steps were performed:
 3. The sample dataset was exported to **CSV format**.
 4. The CSV file was imported into a **PostgreSQL database** using the `\copy` command.
 5. A relational schema was defined to store taxi trips and taxi zone metadata.
+
+## How to Run the Project
+
+1. Download the NYC taxi dataset.
+2. Run convert_sample.py to generate a sample dataset.
+3. Create tables using 00_create_tables.sql.
+4. Load the CSV using PostgreSQL \copy.
+5. Run the SQL analysis queries.
+6. Generate charts with create_visualizations.py.
+
 
 ## Repository Structure
 ```
