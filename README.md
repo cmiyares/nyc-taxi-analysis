@@ -40,3 +40,11 @@ In Queens, airport-related zones dominate taxi demand:
 - LaGuardia Airport
 
 This highlights the importance of airport transportation in overall taxi activity.
+
+### Trip Distance and Fare by Hour
+
+Trip distance and average fares vary throughout the day.
+
+Longer trips appear more frequently during late-night and early morning hours. For example, the average trip distance around **1 AM reaches over 33 miles**, which may reflect airport or long-distance trips.
+
+During daytime hours, average trip distances remain shorter but trip volume increases significantly, indicating typical commuter and city travel patterns.
