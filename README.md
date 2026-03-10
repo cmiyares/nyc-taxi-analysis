@@ -24,3 +24,19 @@ The busiest pickup hour in the sample dataset occurs around **6 PM**, which like
 
 Demand is lowest between **3 AM and 5 AM**, when overall travel activity is minimal.
 
+### Top Pickup Zones by Borough
+
+Using a SQL window function (`ROW_NUMBER()`), the busiest pickup zones within each borough were identified.
+
+In Manhattan, the most active pickup locations are:
+
+- Upper East Side South
+- Midtown Center
+- Upper East Side North
+
+In Queens, airport-related zones dominate taxi demand:
+
+- JFK Airport
+- LaGuardia Airport
+
+This highlights the importance of airport transportation in overall taxi activity.
