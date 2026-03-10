@@ -56,6 +56,7 @@ GROUP BY z.zone, z.borough
 ORDER BY trip_count DESC
 LIMIT 10;
 
+```
 ## Key Insights
 
 - Manhattan accounts for the majority of taxi trips in the dataset.
@@ -87,3 +88,5 @@ nyc-taxi-analysis
 └── images
 hourly_demand.png
 top_zones.png
+
+
