@@ -125,29 +125,29 @@ The following preparation steps were performed:
 5. A relational schema was defined to store taxi trips and taxi zone metadata.
 
 ## Repository Structure
-```markdown
+```
 nyc-taxi-analysis
 │
 ├── notebooks
-│ convert_sample.py
-│ create_visualizations.py
+│ [convert_sample.py](notebooks/convert_sample.py)
+│ [create_visualizations.py](notebooks/create_visualizations.py)
 │
 ├── sql
-│ 00_create_tables.sql
-│ 01_trip_analysis.sql
-│ 02_fare_analysis.sql
-│ 03_hourly_demand.sql
-│ 04_top_zones_by_borough.sql
-│ 05_distance_fare_by_hour.sql
+│ [00_create_tables.sql](sql/00_create_tables.sql)
+│ [01_trip_analysis.sql](sql/01_trip_analysis.sql)
+│ [02_fare_analysis.sql](sql/02_fare_analysis.sql)
+│ [03_hourly_demand.sql](sql/03_hourly_demand.sql)
+│ [04_top_zones_by_borough.sql](sql/04_top_zones_by_borough.sql)
+│ [05_distance_fare_by_hour.sql](sql/05_distance_fare_by_hour.sql)
 │
 ├── data
 │ outputs
-│ hourly_demand.csv
-│ top_zones.csv
+│ [hourly_demand.csv](data/outputs/hourly_demand.csv)
+│ [top_zones.csv](data/outputs/top_zones.csv)
 │
 └── images
-hourly_demand.png
-top_zones.png
+[hourly_demand.png](images/hourly_demand.png)
+[top_zones.png](images/top_zones.png)
 ```
 
 
