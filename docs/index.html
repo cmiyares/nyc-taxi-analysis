@@ -138,14 +138,12 @@ The results were exported and visualized using Python to communicate key insight
 
 ![Taxi Demand by Hour](images/hourly_demand.png)
 
-Taxi demand increases throughout the day and peaks during the evening commute around **6 PM**.
-
+![Taxi Demand by Hour](https://raw.githubusercontent.com/cmiyares/nyc-taxi-analysis/main/images/hourly_demand.png)
 ---
 
 ### Top Pickup Zones
 
-![Top Pickup Zones](images/top_zones.png)
-
+![Top Pickup Zones](https://raw.githubusercontent.com/cmiyares/nyc-taxi-analysis/main/images/top_zones.png)
 Most taxi pickups occur in Manhattan, particularly in busy areas such as Midtown and the Upper East Side.
 
 ## Example SQL Queries
@@ -154,7 +152,7 @@ The project uses analytical SQL queries to explore taxi trip patterns.
 
 **Busiest Pickup Zones**
 
-~~~sql
+```sql
 SELECT
     z.zone,
     z.borough,
@@ -165,18 +163,18 @@ JOIN taxi_zones z
 GROUP BY z.zone, z.borough
 ORDER BY trip_count DESC
 LIMIT 10;
-~~~
+```
 
 **Hourly Taxi Demand**
 
-~~~sql
+```sql
 SELECT
     EXTRACT(HOUR FROM tpep_pickup_datetime) AS pickup_hour,
     COUNT(*) AS trip_count
 FROM taxi_trips
 GROUP BY pickup_hour
 ORDER BY pickup_hour;
-~~~
+```
 
 ## Key Insights
 
@@ -231,7 +229,7 @@ The following preparation steps were performed:
 
 ## Repository Structure
 
-~~~
+```
 nyc-taxi-analysis
 │
 ├── notebooks
@@ -254,7 +252,7 @@ nyc-taxi-analysis
 └── images
     hourly_demand.png
     top_zones.png
-~~~
+```
   </script>
 
   <script>
