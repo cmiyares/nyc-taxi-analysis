@@ -3,12 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>NYC Taxi Analysis</title>
-  <meta name="description" content="A data analysis project exploring NYC taxi trip patterns using Python, pandas, and visualization.">
-  <meta property="og:title" content="NYC Taxi Analysis">
-  <meta property="og:description" content="A data analysis project exploring NYC taxi trip patterns using Python, pandas, and visualization.">
+  <title>NYC Taxi Data Analysis</title>
+  <meta name="description" content="Analysis of NYC taxi trip data using PostgreSQL, SQL, Python, and data visualization.">
+  <meta property="og:title" content="NYC Taxi Data Analysis">
+  <meta property="og:description" content="Analysis of NYC taxi trip data using PostgreSQL, SQL, Python, and data visualization.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://cmiyares.github.io/nyc-taxi-analysis/">
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@5.8.1/github-markdown-light.min.css">
+
   <style>
     * {
       box-sizing: border-box;
@@ -16,148 +20,246 @@
 
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f5f7fb;
-      color: #1f2937;
-      line-height: 1.6;
+      background: #f6f8fa;
+      color: #24292f;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
     }
 
-    .hero {
-      background: linear-gradient(135deg, #0f172a, #1d4ed8);
-      color: white;
-      padding: 64px 20px;
+    .page {
+      max-width: 980px;
+      margin: 40px auto;
+      padding: 0 20px;
     }
 
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .hero h1 {
-      margin: 0 0 12px;
-      font-size: 2.5rem;
-    }
-
-    .hero p {
-      margin: 0;
-      max-width: 700px;
-      font-size: 1.1rem;
-      color: #dbeafe;
-    }
-
-    .content {
-      padding: 40px 20px 60px;
-    }
-
-    .card {
-      background: white;
+    .markdown-body {
+      background: #ffffff;
+      padding: 40px;
+      border: 1px solid #d0d7de;
       border-radius: 16px;
-      padding: 28px;
-      margin-bottom: 24px;
-      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      box-shadow: 0 8px 24px rgba(140, 149, 159, 0.15);
     }
 
-    h2 {
-      margin-top: 0;
-      color: #111827;
+    .markdown-body h1,
+    .markdown-body h2,
+    .markdown-body h3 {
+      scroll-margin-top: 20px;
     }
 
-    ul {
-      padding-left: 20px;
-      margin-bottom: 0;
+    .markdown-body img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
     }
 
-    .button-row {
-      margin-top: 24px;
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
+    .markdown-body table {
+      display: table;
+      width: 100%;
     }
 
-    .button {
-      display: inline-block;
-      padding: 12px 18px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: 0.2s ease;
+    .markdown-body pre {
+      overflow-x: auto;
+      border-radius: 8px;
     }
 
-    .button-primary {
-      background: #2563eb;
-      color: white;
-    }
+    @media (max-width: 700px) {
+      .page {
+        margin: 20px auto;
+        padding: 0 12px;
+      }
 
-    .button-primary:hover {
-      background: #1d4ed8;
-    }
-
-    .button-secondary {
-      background: #e5e7eb;
-      color: #111827;
-    }
-
-    .button-secondary:hover {
-      background: #d1d5db;
-    }
-
-    .footer {
-      text-align: center;
-      color: #6b7280;
-      font-size: 0.95rem;
-      padding: 0 20px 40px;
+      .markdown-body {
+        padding: 20px;
+      }
     }
   </style>
 </head>
 <body>
-  <section class="hero">
-    <div class="container">
-      <h1>NYC Taxi Analysis</h1>
-      <p>
-        A data analysis project exploring NYC taxi trip patterns, fares, and demand trends
-        using Python, pandas, and data visualization.
-      </p>
-
-      <div class="button-row">
-        <a class="button button-primary" href="https://github.com/cmiyares/nyc-taxi-analysis">View GitHub Repo</a>
-        <a class="button button-secondary" href="https://cmiyares.github.io/nyc-taxi-analysis/">Refresh Site</a>
-      </div>
-    </div>
-  </section>
-
-  <main class="content">
-    <div class="container">
-      <div class="card">
-        <h2>About the Project</h2>
-        <p>
-          This project analyzes NYC taxi trip data to better understand ride patterns,
-          trip volume, fare behavior, and overall transportation trends across the city.
-        </p>
-      </div>
-
-      <div class="card">
-        <h2>Tools Used</h2>
-        <ul>
-          <li>Python</li>
-          <li>pandas</li>
-          <li>Matplotlib</li>
-          <li>Jupyter Notebook</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h2>What I Explored</h2>
-        <ul>
-          <li>Trip distribution and demand patterns</li>
-          <li>Relationships between fare amount and trip distance</li>
-          <li>Trends that help explain taxi usage across NYC</li>
-        </ul>
-      </div>
-    </div>
+  <main class="page">
+    <article id="content" class="markdown-body"></article>
   </main>
 
-  <div class="footer">
-    Built by Christian Miyares
-  </div>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <script id="source" type="text/markdown">
+# NYC Taxi Data Analysis
+
+[View repository on GitHub](https://github.com/cmiyares/nyc-taxi-analysis)
+
+![Python](https://img.shields.io/badge/Python-3.x-blue)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-blue)
+![SQL](https://img.shields.io/badge/SQL-Analytics-orange)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-Visualization-green)
+
+## Project Summary
+
+This project analyzes NYC taxi trip data using PostgreSQL and SQL to identify patterns in taxi demand, fare behavior, and geographic pickup activity.
+
+A sample dataset of **200,000 taxi trips** was processed and loaded into a PostgreSQL database. Analytical SQL queries were used to explore trends such as peak demand hours, busiest pickup locations, and differences in trip distance and fare patterns across boroughs.
+
+The results were exported and visualized using Python to communicate key insights from the data.
+
+## Key Metrics
+
+| Metric | Value |
+|------|------|
+| Trips analyzed | **200,000** |
+| Peak demand hour | **18:00** |
+| Most active borough | **Manhattan** |
+| Top pickup location | **Upper East Side South** |
+| SQL queries written | **5 analytical queries** |
+
+## Skills Demonstrated
+
+- SQL data analysis
+- PostgreSQL database design
+- Data cleaning and transformation with Python
+- Analytical queries using joins, aggregations, and window functions
+- Data visualization with Python (matplotlib)
+- Working with large public datasets
+
+## Tools Used
+
+- PostgreSQL
+- SQL
+- Python (pandas, matplotlib)
+- Git / GitHub
+
+## Project Workflow
+
+1. Raw taxi trip data downloaded from the NYC TLC dataset.
+2. Data converted from Parquet to CSV using Python.
+3. A sample of 200,000 trips loaded into PostgreSQL.
+4. SQL queries used to analyze trip demand and fare patterns.
+5. Python used to generate visualizations of key results.
+
+## Visualizations
+
+### Taxi Demand by Hour
+
+![Taxi Demand by Hour](images/hourly_demand.png)
+
+Taxi demand increases throughout the day and peaks during the evening commute around **6 PM**.
+
+---
+
+### Top Pickup Zones
+
+![Top Pickup Zones](images/top_zones.png)
+
+Most taxi pickups occur in Manhattan, particularly in busy areas such as Midtown and the Upper East Side.
+
+## Example SQL Queries
+
+The project uses analytical SQL queries to explore taxi trip patterns.
+
+**Busiest Pickup Zones**
+
+~~~sql
+SELECT
+    z.zone,
+    z.borough,
+    COUNT(*) AS trip_count
+FROM taxi_trips t
+JOIN taxi_zones z
+    ON t.pulocationid = z.locationid
+GROUP BY z.zone, z.borough
+ORDER BY trip_count DESC
+LIMIT 10;
+~~~
+
+**Hourly Taxi Demand**
+
+~~~sql
+SELECT
+    EXTRACT(HOUR FROM tpep_pickup_datetime) AS pickup_hour,
+    COUNT(*) AS trip_count
+FROM taxi_trips
+GROUP BY pickup_hour
+ORDER BY pickup_hour;
+~~~
+
+## Key Insights
+
+- Manhattan accounts for the majority of taxi trips in the dataset.
+- Airport-related zones in Queens show higher average fares.
+- Taxi demand peaks during evening commute hours.
+- Late-night trips tend to have longer travel distances.
+
+## Data Dictionary
+
+| Column | Description |
+|------|-------------|
+| tpep_pickup_datetime | Timestamp when the trip started |
+| tpep_dropoff_datetime | Timestamp when the trip ended |
+| passenger_count | Number of passengers in the taxi |
+| trip_distance | Trip distance in miles |
+| fare_amount | Base fare charged for the trip |
+| tip_amount | Tip paid by the passenger |
+| total_amount | Total amount paid for the trip |
+| PULocationID | Pickup taxi zone ID |
+| DOLocationID | Dropoff taxi zone ID |
+| payment_type | Payment method used |
+
+## Dataset
+
+The dataset used in this project comes from the NYC Taxi & Limousine Commission.
+
+Source: [NYC Taxi Trip Record Data](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page)
+
+The raw dataset is distributed in Parquet format and contains detailed taxi trip records including pickup times, locations, trip distance, and fare information.
+
+## Data Preparation
+
+The raw NYC taxi dataset is distributed in **Parquet format**, which is efficient for large-scale data storage but not directly convenient for database ingestion.
+
+The following preparation steps were performed:
+
+1. The Parquet dataset was loaded using **Python (pandas + pyarrow)**.
+2. A **200,000 row sample** was extracted to create a manageable analysis dataset.
+3. The sample dataset was exported to **CSV format**.
+4. The CSV file was imported into a **PostgreSQL database** using the `\copy` command.
+5. A relational schema was defined to store taxi trips and taxi zone metadata.
+
+## How to Run the Project
+
+1. Download the NYC taxi dataset.
+2. Run `convert_sample.py` to generate a sample dataset.
+3. Create tables using `00_create_tables.sql`.
+4. Load the CSV using PostgreSQL `\copy`.
+5. Run the SQL analysis queries.
+6. Generate charts with `create_visualizations.py`.
+
+## Repository Structure
+
+~~~
+nyc-taxi-analysis
+│
+├── notebooks
+│   convert_sample.py
+│   create_visualizations.py
+│
+├── sql
+│   00_create_tables.sql
+│   01_trip_analysis.sql
+│   02_fare_analysis.sql
+│   03_hourly_demand.sql
+│   04_top_zones_by_borough.sql
+│   05_distance_fare_by_hour.sql
+│
+├── data
+│   outputs
+│       hourly_demand.csv
+│       top_zones.csv
+│
+└── images
+    hourly_demand.png
+    top_zones.png
+~~~
+  </script>
+
+  <script>
+    const markdown = document.getElementById("source").textContent;
+    document.getElementById("content").innerHTML = marked.parse(markdown);
+  </script>
 </body>
 </html>
